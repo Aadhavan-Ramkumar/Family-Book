@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> Family Book </title>
+</head>
+
+<body>
+    <h1> My Family Book </h1>
+    <img id="Images" src="Family Book.png" width="500" height="500">
+    <h3 id="Names"></h3>
+    <br>
+    <button type="button" onclick="NextSlide()"> Next </button>
+    <style>
+        body {
+            text-align: center;
+            background-color: blue;
+        }
+
+        h1,
+        h3 {
+            color: yellow;
+        }
+
+        button {
+            background-color: red;
+            width: 100px;
+            height: 50px;
+            font-size: 35px;
+        }
+    </style>
+    <script>
+        var Images = ["Family Book.png", "Father.png", "Mother.png"];
+        var Names = ["Geller", "Ross", "Rachel"];
+        var Father = Names[1].concat(" " + Names[0]);
+        var Mother = Names[2].concat(" " + Names[0]);
+        var i = 0;
+
+        function NextSlide() {
+            document.getElementById("Images").src = Images[i];
+            i++;
+            if (i == 1) {
+                document.getElementById("Names").innerHTML = " ";
+            }
+            if (i == 2) {
+                document.getElementById("Names").innerHTML = Father;
+            }
+            if (i == 3) {
+                document.getElementById("Names").innerHTML = Mother;
+                i = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>
